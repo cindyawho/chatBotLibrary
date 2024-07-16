@@ -8,12 +8,12 @@ import {
 import { Themes } from "../assets/Themes";
 import { useNavigation } from "@react-navigation/native";
 
-const Song = ({
+const Chatbot = ({
   index,
   imageUrl,
-  songTitle,
-  songArtists,
-  albumName,
+  chatbotTitle,
+  creator,
+  component,
 }) => {
   const navigation = useNavigation();
 
@@ -22,26 +22,26 @@ const Song = ({
       onPress={() =>
         navigation.navigate("ChatScreen", {
           // this is a "quick and dirty" hack for the moment, we'll want to rename our properties later
-          chatbotName: albumName,
+          chatbotName: component,
         })
       }
     >
-      <View style={styles.song}>
+      <View style={styles.chatbot}>
         <Text style={styles.index}>{index + 1}</Text>
         <Image
-          style={[styles.image, styles.albumCover]}
+          style={[styles.image, styles.chatbotImage]}
           source={{ uri: imageUrl }}
         />
-        <View style={styles.songArtistContainer}>
-          <Text style={[styles.songTitle]} numberOfLines={1}>
-            {songTitle}
+        <View style={styles.chatCreatorContainer}>
+          <Text style={[styles.chatbotTitle]} numberOfLines={1}>
+            {chatbotTitle}
           </Text>
-          <Text style={styles.songArtists} numberOfLines={1}>
-            {songArtists}
+          <Text style={styles.creator} numberOfLines={1}>
+            {creator}
           </Text>
         </View>
-        <Text style={[styles.albumName]} numberOfLines={1}>
-          {albumName}
+        <Text style={[styles.component]} numberOfLines={1}>
+          {component}
         </Text>
       </View>
     </Pressable>
@@ -49,7 +49,7 @@ const Song = ({
 };
 
 const styles = StyleSheet.create({
-  song: {
+  chatbot: {
     display: "flex",
     flexDirection: "row",
     padding: 5,
@@ -64,25 +64,25 @@ const styles = StyleSheet.create({
     fontSize: 12,
     margin: 1,
   },
-  albumCover: {
+  chatbotImage: {
     resizeMode: "contain",
     flex: 0.2,
     width: 50,
     height: 50,
   },
-  songArtistContainer: {
+  chatCreatorContainer: {
     flex: 0.4,
     margin: 5,
   },
-  songTitle: {
+  chatbotTitle: {
     color: Themes.colors.white,
     fontSize: 12,
   },
-  songArtists: {
+  creator: {
     color: Themes.colors.gray,
     fontSize: 12,
   },
-  albumName: {
+  component: {
     color: Themes.colors.white,
     flex: 0.25,
     fontSize: 12,
@@ -90,4 +90,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Song;
+export default Chatbot;

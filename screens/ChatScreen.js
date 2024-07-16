@@ -8,21 +8,21 @@ import LuisHangmanGame from "../chatbot_components/luis/LuisHangmanGame";
 // prettier-ignore
 export const CHATBOTS = {
   "CindysChatbot": {
-    id: "CindysChatbot",
+    componentID: "CindysChatbot",
     name: "About Cindy Trivia",
     creator: "Cindy Andrade",
     imageUrl: "https://media.istockphoto.com/id/1957053641/vector/cute-kawaii-robot-character-friendly-chat-bot-assistant-for-online-applications-cartoon.jpg?s=612x612&w=0&k=20&c=Uf7lcu3I_ZNQvjBWxlFenRX7FuG_PKVJ4y1Y11aTZUc=",
     component: CindysChatbot,
   },
   "MasielsChatbot": {
-    id: "MasielsChatbot",
+    componentID: "MasielsChatbot",
     name: "Quick Trivia Chat",
     creator: "Masiel Martinez",
     imageUrl: "https://www.shutterstock.com/image-photo/cartoon-rubber-duck-mohawk-leather-260nw-2474232909.jpg",
     component: MasielsChatbot,
   },
   "LuisHangmanGame": {
-    id: "LuisHangmanGame",
+    componentID: "LuisHangmanGame",
     name: "Hangman Game",
     creator: "Luis Morales",
     imageUrl: "https://www.shutterstock.com/image-vector/hangman-hang-man-guessing-game-260nw-2179099581.jpg",
