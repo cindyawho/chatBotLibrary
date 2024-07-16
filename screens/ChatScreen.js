@@ -5,9 +5,17 @@ import CindysChatbot from "../chatbot_components/cindy/CindysChatbot";
 import MasielsChatbot from "../chatbot_components/masiel/MasielsChatbot";
 import LuisHangmanGame from "../chatbot_components/luis/LuisHangmanGame";
 import BeesChatbot from '../chatbot_components/bee/BeesChatbot';
+import BasicChatbot from '../chatbot_components/chatGPT/BasicChatbot';
 
 // prettier-ignore
 export const CHATBOTS = {
+  "BasicChatbot": {
+    componentID: "BasicChatbot",
+    name: "Talk with ChatGPT",
+    creator: "Snap Engineering Instructors",
+    imageUrl: "https://static.vecteezy.com/system/resources/previews/024/558/804/original/openai-chatgpt-logo-icon-free-png.png",
+    component: BasicChatbot,
+  },
   "CindysChatbot": {
     componentID: "CindysChatbot",
     name: "About Cindy Trivia",
