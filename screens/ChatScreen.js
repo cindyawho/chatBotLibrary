@@ -3,10 +3,23 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet, SafeAreaView, Platform, Text } from "react-native";
 import BasicChatbot from "../components/BasicChatbot";
 import BakersChatbot from "../components/BakersChatbot";
-import CindysChatbot from "../chatbot_components/CindysChatbot";
+import CindysChatbot from "../chatbot_components/cindy/CindysChatbot";
+import MasielsChatbot from "../chatbot_components/masiel/MasielsChatbot";
 
 // prettier-ignore
 export const CHATBOTS = {
+  "CindysChatbot": {
+    id: "CindysChatbot",
+    name: "About Cindy Trivia",
+    imageUrl: "https://media.istockphoto.com/id/1957053641/vector/cute-kawaii-robot-character-friendly-chat-bot-assistant-for-online-applications-cartoon.jpg?s=612x612&w=0&k=20&c=Uf7lcu3I_ZNQvjBWxlFenRX7FuG_PKVJ4y1Y11aTZUc=",
+    component: CindysChatbot,
+  },
+  "MasielsChatbot": {
+    id: "MasielsChatbot",
+    name: "Masiel's Trivia Chat",
+    imageUrl: "https://www.shutterstock.com/image-photo/cartoon-rubber-duck-mohawk-leather-260nw-2474232909.jpg",
+    component: MasielsChatbot,
+  },
   "BasicChatbot": {
     id: "BasicChatbot",
     name: "React Native Chatbot",
@@ -19,12 +32,6 @@ export const CHATBOTS = {
     imageUrl: "https://img.freepik.com/free-vector/cute-dog-robot-cartoon-character-animal-technology-isolated_138676-3143.jpg?w=150",
     component: BakersChatbot,
   },
-  "CindysChatbot": {
-    id: "CindysChatbot",
-    name: "About Cindy Trivia",
-    imageUrl: "https://media.istockphoto.com/id/1957053641/vector/cute-kawaii-robot-character-friendly-chat-bot-assistant-for-online-applications-cartoon.jpg?s=612x612&w=0&k=20&c=Uf7lcu3I_ZNQvjBWxlFenRX7FuG_PKVJ4y1Y11aTZUc=",
-    component: CindysChatbot,
-  }
 };
 
 export default function ChatScreen({ route }) {
