@@ -1,8 +1,6 @@
 import React from "react";
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, SafeAreaView, Platform, Text } from "react-native";
-import BasicChatbot from "../components/BasicChatbot";
-import BakersChatbot from "../components/BakersChatbot";
 import CindysChatbot from "../chatbot_components/cindy/CindysChatbot";
 import MasielsChatbot from "../chatbot_components/masiel/MasielsChatbot";
 import LuisHangmanGame from "../chatbot_components/luis/LuisHangmanGame";
@@ -12,32 +10,23 @@ export const CHATBOTS = {
   "CindysChatbot": {
     id: "CindysChatbot",
     name: "About Cindy Trivia",
+    creator: "Cindy Andrade",
     imageUrl: "https://media.istockphoto.com/id/1957053641/vector/cute-kawaii-robot-character-friendly-chat-bot-assistant-for-online-applications-cartoon.jpg?s=612x612&w=0&k=20&c=Uf7lcu3I_ZNQvjBWxlFenRX7FuG_PKVJ4y1Y11aTZUc=",
     component: CindysChatbot,
   },
   "MasielsChatbot": {
     id: "MasielsChatbot",
-    name: "Masiel's Trivia Chat",
+    name: "Quick Trivia Chat",
+    creator: "Masiel Martinez",
     imageUrl: "https://www.shutterstock.com/image-photo/cartoon-rubber-duck-mohawk-leather-260nw-2474232909.jpg",
     component: MasielsChatbot,
   },
   "LuisHangmanGame": {
     id: "LuisHangmanGame",
-    name: "Luis's Hangman Game",
+    name: "Hangman Game",
+    creator: "Luis Morales",
     imageUrl: "https://www.shutterstock.com/image-vector/hangman-hang-man-guessing-game-260nw-2179099581.jpg",
     component: LuisHangmanGame,
-  },
-  "BasicChatbot": {
-    id: "BasicChatbot",
-    name: "React Native Chatbot",
-    imageUrl: "https://loremflickr.com/140/140",
-    component: BasicChatbot,
-  },
-  "BakersChatbot": {
-    id: "BakersChatbot",
-    name: "Baker's Dog Trivia",
-    imageUrl: "https://img.freepik.com/free-vector/cute-dog-robot-cartoon-character-animal-technology-isolated_138676-3143.jpg?w=150",
-    component: BakersChatbot,
   },
 };
 

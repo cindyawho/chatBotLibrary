@@ -3,20 +3,10 @@ import {
   Text,
   View,
   Image,
-  ScrollView,
   Pressable,
 } from "react-native";
 import { Themes } from "../assets/Themes";
-import { millisToMinutesAndSeconds } from "../utils";
 import { useNavigation } from "@react-navigation/native";
-
-const SongArtists = ({ SongArtists }) => {
-  return (
-    <Text style={styles.songArtists} numberOfLines={1}>
-      {SongArtists.map(({ name }) => `${name}`).join(", ")}
-    </Text>
-  );
-};
 
 const Song = ({
   index,
@@ -24,7 +14,6 @@ const Song = ({
   songTitle,
   songArtists,
   albumName,
-  duration,
 }) => {
   const navigation = useNavigation();
 
@@ -47,13 +36,12 @@ const Song = ({
           <Text style={[styles.songTitle]} numberOfLines={1}>
             {songTitle}
           </Text>
-          <SongArtists SongArtists={songArtists} />
+          <Text style={styles.songArtists} numberOfLines={1}>
+            {songArtists}
+          </Text>
         </View>
         <Text style={[styles.albumName]} numberOfLines={1}>
           {albumName}
-        </Text>
-        <Text style={[styles.duration]} numberOfLines={1}>
-          {millisToMinutesAndSeconds(duration)}
         </Text>
       </View>
     </Pressable>
@@ -97,12 +85,6 @@ const styles = StyleSheet.create({
   albumName: {
     color: Themes.colors.white,
     flex: 0.25,
-    fontSize: 12,
-    margin: 5,
-  },
-  duration: {
-    color: Themes.colors.gray,
-    flex: 0.1,
     fontSize: 12,
     margin: 5,
   },

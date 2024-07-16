@@ -8,9 +8,8 @@ const renderChat = ({ item, index }) => (
     index={index}
     imageUrl={item.imageUrl}
     songTitle={item.name}
-    songArtists={[{ name: "developer" }]}
+    songArtists={item.creator}
     albumName={item.id}
-    duration={1000}
   />
 );
 
