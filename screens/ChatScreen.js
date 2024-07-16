@@ -5,6 +5,7 @@ import BasicChatbot from "../components/BasicChatbot";
 import BakersChatbot from "../components/BakersChatbot";
 import CindysChatbot from "../chatbot_components/cindy/CindysChatbot";
 import MasielsChatbot from "../chatbot_components/masiel/MasielsChatbot";
+import LuisHangmanGame from "../chatbot_components/luis/LuisHangmanGame";
 
 // prettier-ignore
 export const CHATBOTS = {
@@ -19,6 +20,12 @@ export const CHATBOTS = {
     name: "Masiel's Trivia Chat",
     imageUrl: "https://www.shutterstock.com/image-photo/cartoon-rubber-duck-mohawk-leather-260nw-2474232909.jpg",
     component: MasielsChatbot,
+  },
+  "LuisHangmanGame": {
+    id: "LuisHangmanGame",
+    name: "Luis's Hangman Game",
+    imageUrl: "https://www.shutterstock.com/image-vector/hangman-hang-man-guessing-game-260nw-2179099581.jpg",
+    component: LuisHangmanGame,
   },
   "BasicChatbot": {
     id: "BasicChatbot",
