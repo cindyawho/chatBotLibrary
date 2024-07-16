@@ -3,7 +3,7 @@ import { GiftedChat } from "react-native-gifted-chat";
 import words from './words.json'
 const CHATBOT_USER_OBJ = {
   _id: 2,
-  name: "React Native Chatbot",
+  name: "Anything You Want",
   avatar: "https://www.shutterstock.com/image-vector/hangman-hang-man-guessing-game-260nw-2179099581.jpg",
 };
 
@@ -129,9 +129,9 @@ export default function LuisHangmanGame() {
   };
 
   const respondToUser = (userMessages) => {
-    console.log("Recent user msg:", userMessages[0].text);
+    // console.log("Recent user msg:", userMessages[0].text);
     let guess = userMessages[0].text.toLowerCase();
-    console.log("msg ", guess);
+    // console.log("msg ", guess);
     let copyBoolArr = letterBoolArray;
     let boolArrForUpdatingLetter = [...copyBoolArr];
     let flag = checkForLetter(completeWord, guess, copyBoolArr);

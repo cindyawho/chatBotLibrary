@@ -5,7 +5,7 @@ import { setStatusBarBackgroundColor } from "expo-status-bar";
 
 const CHATBOT_USER_OBJ = {
   _id: 2,
-  name: "React Native Chatbot",
+  name: "Cindy's Chatbot",
   avatar: "https://media.istockphoto.com/id/1957053641/vector/cute-kawaii-robot-character-friendly-chat-bot-assistant-for-online-applications-cartoon.jpg?s=612x612&w=0&k=20&c=Uf7lcu3I_ZNQvjBWxlFenRX7FuG_PKVJ4y1Y11aTZUc=",
 };
 

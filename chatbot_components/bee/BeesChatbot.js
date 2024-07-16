@@ -3,37 +3,29 @@ import { GiftedChat } from "react-native-gifted-chat";
 
 const CHATBOT_USER_OBJ = {
   _id: 2,
-  name: "Masiel's Chatbot",
-  avatar: "https://www.shutterstock.com/image-photo/cartoon-rubber-duck-mohawk-leather-260nw-2474232909.jpg",
+  name: "Riddle Bee This",
+  avatar: "https://i.pinimg.com/736x/2a/2e/b9/2a2eb90741c39eefe3c2768ee487ab9f.jpg",
 };
 
-const triviaQuestion = [
-  {
-    question: "Do you want to start the game? [Y/N]",
-    answer: "Y",
-  },
-  {
-    question: "Is that sky blue? [Y/N]",
-    answer: "Y",
-  },
-  {
-    question: "Is that ocean blue? [Y/N]",
-    answer: "Y",
-  },
-  {
-    question: "Is that blood blue? [Y/N]",
-    answer: "N",
-  },
+let triviaQuestions = [
+  "Hello, welcome to simple trivia! Say 'Yes' when you're ready to play!",
+  "Question 1: The poor have me, the rich want me, and if you eat me you'll die. What am I?",
+  "Question 2: I can't be saved, though people try. When fun is had, they say I fly. They say I'm money: I can be spent, I can be wasted, But never lent. What am I?",
+  "Question 3: What is '2 + 2'?",
 ];
-let currentQuestion = 0;
-export default function MasielsChatbot() {
+
+const triviaAnswers = ["yes", "nothing", "time", "a string"];
+
+let activeQuestion = 0;
+
+export default function BeesChatbot() {
   const [messages, setMessages] = useState([]);
 
   useEffect(() => {
     if (messages.length < 1) {
       // Add a "starting message" when chat UI first loads
       addBotMessage(
-        "Hello, welcome to simple trivia! Say 'Y' when you're ready to play!"
+        "Hello, welcome to simple trivia! Say 'Yes' when you're ready to play!"
       );
     }
   }, []);
@@ -58,27 +50,21 @@ export default function MasielsChatbot() {
   };
 
   const respondToUser = (userMessages) => {
-    console.log("Recent user msg:", userMessages[0].text);
-
-    if (currentQuestion > triviaQuestion.length -1 ) {
-      addBotMessage("GAME OVER NERD")
-      return;
-    }
-    if (userMessages[0].text === triviaQuestion[currentQuestion].answer) {
-      // user got correct answer
-      addBotMessage("That's correct");
-      console.log("76 that was right");
-      currentQuestion += 1;
-      if (currentQuestion > triviaQuestion.length -1 ) {
-        addBotMessage("GAME OVER NERD")
-        return; }
-      addBotMessage(triviaQuestion[currentQuestion].question)
+    if (userMessages[0].text.toLowerCase() === triviaAnswers[activeQuestion]) {
+      let successMessage = activeQuestion === 0 ? "Groovy!" : "Correct!";
+      addBotMessage(successMessage);
+      activeQuestion = (activeQuestion + 1) % triviaQuestions.length;
+      addBotMessage(triviaQuestions[activeQuestion]);
     } else {
-      addBotMessage("That's not right....");
-      addBotMessage(triviaQuestion[currentQuestion].question)
+      if (activeQuestion === 0) {
+        addBotMessage("You pile of bricks! Do you want to play or don't you?!");
+        return;
+      } else {
+        addBotMessage("Incorrect!");
+      }
+
+      addBotMessage(triviaQuestions[activeQuestion]);
     }
-  
-    
   };
 
   const onSend = useCallback((messages = []) => {

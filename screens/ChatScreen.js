@@ -4,6 +4,7 @@ import { StyleSheet, SafeAreaView, Platform, Text } from "react-native";
 import CindysChatbot from "../chatbot_components/cindy/CindysChatbot";
 import MasielsChatbot from "../chatbot_components/masiel/MasielsChatbot";
 import LuisHangmanGame from "../chatbot_components/luis/LuisHangmanGame";
+import BeesChatbot from '../chatbot_components/bee/BeesChatbot';
 
 // prettier-ignore
 export const CHATBOTS = {
@@ -27,6 +28,13 @@ export const CHATBOTS = {
     creator: "Luis Morales",
     imageUrl: "https://www.shutterstock.com/image-vector/hangman-hang-man-guessing-game-260nw-2179099581.jpg",
     component: LuisHangmanGame,
+  },
+  "BeesChatbot": {
+    componentID: "BeesChatbot",
+    name: "Riddles with Bee",
+    creator: "Bee Du",
+    imageUrl: "https://i.pinimg.com/736x/2a/2e/b9/2a2eb90741c39eefe3c2768ee487ab9f.jpg",
+    component: BeesChatbot,
   },
 };
 
