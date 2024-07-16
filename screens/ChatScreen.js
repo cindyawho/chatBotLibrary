@@ -3,6 +3,7 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet, SafeAreaView, Platform, Text } from "react-native";
 import BasicChatbot from "../components/BasicChatbot";
 import BakersChatbot from "../components/BakersChatbot";
+import CindysChatbot from "../chatbot_components/CindysChatbot";
 
 // prettier-ignore
 export const CHATBOTS = {
@@ -17,6 +18,12 @@ export const CHATBOTS = {
     name: "Baker's Dog Trivia",
     imageUrl: "https://img.freepik.com/free-vector/cute-dog-robot-cartoon-character-animal-technology-isolated_138676-3143.jpg?w=150",
     component: BakersChatbot,
+  },
+  "CindysChatbot": {
+    id: "CindysChatbot",
+    name: "About Cindy Trivia",
+    imageUrl: "https://media.istockphoto.com/id/1957053641/vector/cute-kawaii-robot-character-friendly-chat-bot-assistant-for-online-applications-cartoon.jpg?s=612x612&w=0&k=20&c=Uf7lcu3I_ZNQvjBWxlFenRX7FuG_PKVJ4y1Y11aTZUc=",
+    component: CindysChatbot,
   }
 };
 
