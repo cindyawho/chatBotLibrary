@@ -20,11 +20,9 @@ async function fetchInitialMessage(addBotMessage) {
 
 export default function BasicChatbot() {
   const [messages, setMessages] = useState([]);
-  const [chatHistory, setChatHistory] = useState([]);
 
   useEffect(() => {
     setMessages([]);
-    // console.log("********************************");
     fetchInitialMessage(addBotMessage);
   }, []);
 
@@ -51,7 +49,7 @@ export default function BasicChatbot() {
     const reverseMessages = messages.reverse();
     const allMessages = [...reverseMessages, newMessages[0]];
     // console.log("all messages: ", allMessages);
-    const formattedMessages = allMessages.map((element) => {
+    let formattedMessages = allMessages.map((element) => {
         // console.log("Each Element:", element);
         let userName = element.user.name;
         let messageContent = element.text;
@@ -62,6 +60,7 @@ export default function BasicChatbot() {
             return{role: "user", content: messageContent};
         }
     })
+    formattedMessages = [prompt[0], ...formattedMessages]
     // console.log("FORMATTED MESSAGES: ", formattedMessages);
     fetchChatGPTMessage(formattedMessages);
   };
