@@ -1,11 +1,11 @@
 var myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
 myHeaders.append("Accept", "application/json");
-myHeaders.append("Authorization", "Bearer sk-proj-DlNsY9v04tHC9epi8bE2T3BlbkFJvfyAqO7mVsjKqDuOUEPQ");
+myHeaders.append("Authorization", "Bearer sk-None-fTyil75x6P5rheW79R1vT3BlbkFJtO9WSo0ZQ1rSWRU7b8J6");
 
 export const getChat = async (messages) => {
   const raw = JSON.stringify({
-    "model": "gpt-4o",
+    "model": "gpt-3.5-turbo-0125",
     "messages": messages,
     "temperature": 1,
     "top_p": 1,
