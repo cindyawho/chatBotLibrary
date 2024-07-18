@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { StyleSheet, View, Alert } from 'react-native'
 import { Button, Input } from '@rneui/themed'
 import { supabase } from '../utils/supabase'
+import Avatar from './Avatar'
 
 export default function Account({ session }) {
   const [loading, setLoading] = useState(true)
@@ -74,28 +75,38 @@ export default function Account({ session }) {
 
   return (
     <View style={styles.container}>
-      <View style={[styles.verticallySpaced, styles.mt20]}>
-        <Input label="Email" value={session?.user?.email} disabled />
-      </View>
-      <View style={styles.verticallySpaced}>
-        <Input label="Username" value={username || ''} onChangeText={(text) => setUsername(text)} />
-      </View>
-      <View style={styles.verticallySpaced}>
-        <Input label="Website" value={website || ''} onChangeText={(text) => setWebsite(text)} />
-      </View>
+        <View style={[styles.verticallySpaced, styles.mt20]}>
+            <Input label="Email" value={session?.user?.email} disabled />
+        </View>
+        <View style={styles.verticallySpaced}>
+            <Input label="Username" value={username || ''} onChangeText={(text) => setUsername(text)} />
+        </View>
+        <View style={styles.verticallySpaced}>
+            <Input label="Website" value={website || ''} onChangeText={(text) => setWebsite(text)} />
+        </View>
+        <View>
+            <Avatar
+                size={150}
+                url={avatarUrl}
+                onUpload={(url) => {
+                setAvatarUrl(url)
+                updateProfile({ username, website, avatar_url: url })
+                }}
+            />
+            </View>
 
-      <View style={[styles.verticallySpaced, styles.mt20]}>
-        <Button
-          title={loading ? 'Loading ...' : 'Update'}
-          onPress={() => updateProfile({ username, website, avatar_url: avatarUrl })}
-          disabled={loading}
-        />
-      </View>
+        <View style={[styles.verticallySpaced, styles.mt20]}>
+            <Button
+            title={loading ? 'Loading ...' : 'Update'}
+            onPress={() => updateProfile({ username, website, avatar_url: avatarUrl })}
+            disabled={loading}
+            />
+        </View>
 
-      <View style={styles.verticallySpaced}>
-        <Button title="Sign Out" onPress={() => supabase.auth.signOut()} />
-      </View>
-    </View>
+        <View style={styles.verticallySpaced}>
+            <Button title="Sign Out" onPress={() => supabase.auth.signOut()} />
+        </View>
+        </View>
   )
 }
 
