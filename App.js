@@ -1,41 +1,26 @@
-
-import React, { useState, useEffect } from 'react';
-import { View, Text, FlatList, SafeAreaView } from 'react-native';
-import { supabase } from './utils/supabase';
+import { useState, useEffect } from 'react'
+import { supabase } from './utils/supabase'
+import Auth from './components/Auth'
+import Account from './components/Account'
+import { View } from 'react-native'
+import { Session } from '@supabase/supabase-js'
 
 export default function App() {
-  const [todos, setTodos] = useState([]);
+  const [session, setSession] = useState(null)
 
   useEffect(() => {
-    const getTodos = async () => {
-      try {
-        const { data: todos, error } = await supabase.from('todos').select();
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setSession(session)
+    })
 
-        if (error) {
-          console.error('Error fetching todos:', error.message);
-          return;
-        }
-
-        if (todos && todos.length > 0) {
-          setTodos(todos);
-        }
-      } catch (error) {
-        console.error('Error fetching todos:', error.message);
-      }
-    };
-
-    getTodos();
-  }, []);
+    supabase.auth.onAuthStateChange((_event, session) => {
+      setSession(session)
+    })
+  }, [])
 
   return (
-    <SafeAreaView style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Todo List</Text>
-      <FlatList
-        data={todos}
-        keyExtractor={(item) => item.id.toString()}
-        renderItem={({ item }) => <Text key={item.id}>{item.title}</Text>}
-      />
-    </SafeAreaView>
-  );
-};
-
+    <View>
+      {session && session.user ? <Account key={session.user.id} session={session} /> : <Auth />}
+    </View>
+  )
+}
