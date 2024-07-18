@@ -7,7 +7,7 @@ import {ImageBackground} from 'react-native';
 const CHATBOT_USER_OBJ = {
   _id: 2,
   name: "ChatGPT 3.5",
-  avatar: "https://static.vecteezy.com/system/resources/previews/024/558/804/original/openai-chatgpt-logo-icon-free-png.png",
+  avatar: "https://i.ibb.co/xMVRqyy/Chat-GPT-Logo.png",
 };
 
 async function fetchInitialMessage(addBotMessage) {
