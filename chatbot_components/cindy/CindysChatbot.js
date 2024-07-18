@@ -1,7 +1,7 @@
 import React, { useState, useCallback, useEffect } from "react";
 import { GiftedChat } from "react-native-gifted-chat";
 import QUESTION_BANK from './questionBank'
-import { setStatusBarBackgroundColor } from "expo-status-bar";
+import {View} from 'react-native';
 
 const CHATBOT_USER_OBJ = {
   _id: 2,
@@ -90,19 +90,21 @@ export default function CindysChatbot() {
   }, []);
 
   return (
-    <GiftedChat
-      messages={messages}
-      onSend={(messages) => {
-        onSend(messages);
-        // Wait a sec before responding
-        setTimeout(() => respondToUser(messages), 1000);
-      }}
-      user={{
-        _id: 1,
-        name: "Snap Scholar",
-      }}
-      renderUsernameOnMessage={true}
-    />
+    <View style={{ backgroundColor: "#4dc9ff", flex: 1 }}>
+      <GiftedChat
+        messages={messages}
+        onSend={(messages) => {
+          onSend(messages);
+          // Wait a sec before responding
+          setTimeout(() => respondToUser(messages), 1000);
+        }}
+        user={{
+          _id: 1,
+          name: "Snap Scholar",
+        }}
+        renderUsernameOnMessage={true}
+      />
+    </View>
   );
 }
 
