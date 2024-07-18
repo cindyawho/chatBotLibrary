@@ -2,6 +2,7 @@ import React, { useState, useCallback, useEffect } from "react";
 import { GiftedChat } from "react-native-gifted-chat";
 import { getChat } from "../../utils/getChatGPT";
 import prompt from './promptData'
+import {ImageBackground} from 'react-native';
 
 const CHATBOT_USER_OBJ = {
   _id: 2,
@@ -77,17 +78,23 @@ export default function EscapeForest() {
   }, []);
 
   return (
-    <GiftedChat
-      messages={messages}
-      onSend={(messages) => {
-        onSend(messages);
-        setTimeout(() => respondToUser(messages), 1000);
-      }}
-      user={{
-        _id: 1,
-        name: "Baker",
-      }}
-      renderUsernameOnMessage={true}
-    />
+    <ImageBackground
+      imageStyle= {{opacity:0.5}}
+      source={{uri : "https://img.freepik.com/premium-photo/tranquil-forest-cabin-with-cozy-fireplace-wallpaper-phone_964851-68863.jpg"}}
+      style={{flex: 1}}
+    >
+      <GiftedChat
+        messages={messages}
+        onSend={(messages) => {
+          onSend(messages);
+          setTimeout(() => respondToUser(messages), 1000);
+        }}
+        user={{
+          _id: 1,
+          name: "Baker",
+        }}
+        renderUsernameOnMessage={true}
+      />
+    </ImageBackground>
   );
 }

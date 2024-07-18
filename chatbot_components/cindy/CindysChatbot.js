@@ -1,7 +1,7 @@
 import React, { useState, useCallback, useEffect } from "react";
 import { GiftedChat } from "react-native-gifted-chat";
 import QUESTION_BANK from './questionBank'
-import {View} from 'react-native';
+import {ImageBackground} from 'react-native';
 
 const CHATBOT_USER_OBJ = {
   _id: 2,
@@ -90,7 +90,10 @@ export default function CindysChatbot() {
   }, []);
 
   return (
-    <View style={{ backgroundColor: "#4dc9ff", flex: 1 }}>
+    <ImageBackground
+      source={{uri : "https://i.pinimg.com/736x/3f/f5/51/3ff5517283017cc61134f47baf797011.jpg"}}
+      style={{flex: 1}}
+    >
       <GiftedChat
         messages={messages}
         onSend={(messages) => {
@@ -104,7 +107,7 @@ export default function CindysChatbot() {
         }}
         renderUsernameOnMessage={true}
       />
-    </View>
+    </ImageBackground>
   );
 }
 
