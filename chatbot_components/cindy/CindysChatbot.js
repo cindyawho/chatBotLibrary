@@ -19,7 +19,7 @@ export default function CindysChatbot() {
     if (messages.length < 1) {
       // Add a "starting message" when chat UI first loads
       addBotMessage(
-        "Hello, welcome to simple trivia! Say 'Start' when you're ready to play!"
+        "Hello, welcome to trivia about Cindy! Say 'Start' when you're ready to play!"
       );
     }
   }, []);
@@ -65,7 +65,8 @@ export default function CindysChatbot() {
       setTriviaNumber(triviaNumber+1);
       // console.log(triviaNumber, " : ", QUESTION_BANK.length);
       if(triviaNumber == QUESTION_BANK.length - 1){
-        addBotMessage("CONGRATS! YOU BEAT THE GAME! Your final score was: " + score);
+        addBotMessage("CONGRATS! YOU BEAT THE GAME!");
+        // addBotMessage("CONGRATS! YOU BEAT THE GAME! Your final score was: " + score);
         addBotMessage("Resetting....");
         resetGame(setTriviaNumber, setScore);
         addBotMessage("Game is reset!");

@@ -6,13 +6,21 @@ import MasielsChatbot from "../chatbot_components/masiel/MasielsChatbot";
 import LuisHangmanGame from "../chatbot_components/luis/LuisHangmanGame";
 import BeesChatbot from '../chatbot_components/bee/BeesChatbot';
 import BasicChatbot from '../chatbot_components/chatGPT/BasicChatbot';
+import EscapeForest from '../chatbot_components/escapeForest/EscapeForest';
 
 // prettier-ignore
 export const CHATBOTS = {
+  "EscapeForest": {
+    componentID: "EscapeForest",
+    name: "Escape the Forest",
+    creator: "Cindy Andrade",
+    imageUrl: "https://i.ibb.co/xMVRqyy/Chat-GPT-Logo.png",
+    component: EscapeForest,
+  },
   "BasicChatbot": {
     componentID: "BasicChatbot",
-    name: "Talk with ChatGPT",
-    creator: "Snap Engineering Instructors",
+    name: "EmojiMovie X ChatGPT",
+    creator: "SEA Instructors & Cindy Andrade",
     imageUrl: "https://static.vecteezy.com/system/resources/previews/024/558/804/original/openai-chatgpt-logo-icon-free-png.png",
     component: BasicChatbot,
   },
