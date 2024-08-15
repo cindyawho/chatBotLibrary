@@ -8,8 +8,8 @@ In this lab, we combined the two labs we worked on last week: spotify navigation
 3. Open terminal in the VSCode window then run `yarn` to install packages
 4. Launch the project with `yarn expo start`
 
-###Sneak Peek:
+### Sneak Peek:
 
-![Simulator Screenshot - iPhone 15 Pro - 2024-08-15 at 11 27 12 ](https://github.com/user-attachments/assets/e828584d-9b69-4fa0-a012-72141aee7afc)
+<img src="https://github.com/user-attachments/assets/e828584d-9b69-4fa0-a012-72141aee7afc" width="300" height="auto" alt="screenshot of chatbot library main menu">
 
-![simulator_screenshot_ED125539-4372-44D1-87EB-B01480850233](https://github.com/user-attachments/assets/3084e74a-2b2f-4bab-a781-a60b2e66d6ec)
+<img src="https://github.com/user-attachments/assets/3084e74a-2b2f-4bab-a781-a60b2e66d6ec" width="300" height="auto" alt="screenshot of Escape the Forest game">
