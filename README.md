@@ -7,6 +7,7 @@ In this lab, we combined the two labs we worked on last week: spotify navigation
 2. Open the project code in VSCode (use `code .` if you can)
 3. Open terminal in the VSCode window then run `yarn` to install packages
 4. Launch the project with `yarn expo start`
+5. Ensure that you have an OpenAI API Key. Instructions for finding that can be found here: https://help.openai.com/en/articles/4936850-where-do-i-find-my-openai-api-key
 
 ### Sneak Peek:
 
